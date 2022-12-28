@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Filter, setFilters, Column } from "../../../hooks";
+import { Filter, setFilters, Column } from "../../../../../types";
 import { Tag } from "../../../../../types";
 import { InputSelect } from "../../../../../parts";
 

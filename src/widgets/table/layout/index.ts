@@ -1,3 +1,4 @@
+import React from "react";
 export { default as TableLayout } from "./layout";
 
 export { default as Table } from "./table";

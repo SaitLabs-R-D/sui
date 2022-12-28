@@ -1,3 +1,5 @@
+import React from "react";
+
 export { default as InputText } from "./text";
 export { default as InputSelect } from "./select";
 export { default as InputTextArea } from "./text_area";

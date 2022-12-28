@@ -1,3 +1,4 @@
+import React from "react";
 import { InputText } from "../../../../../parts";
 import { Column, Filter, setFilters, Tag } from "../../../../../types";
 

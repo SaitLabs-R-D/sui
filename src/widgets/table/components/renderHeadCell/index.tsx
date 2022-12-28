@@ -1,3 +1,4 @@
+import React from "react";
 import Th from "../../layout/th";
 import { RenderHeadCellProps } from "../../../../types";
 

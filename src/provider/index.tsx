@@ -1,5 +1,7 @@
-import { createContext } from "react";
+import React, { createContext } from "react";
 import "../styles/style.scss";
+import "../styles/custom/button.scss";
+import "../styles/custom/input.scss";
 
 const SuiContext = createContext({});
 

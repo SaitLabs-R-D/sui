@@ -1,6 +1,6 @@
+import React from "react";
 import { Tag } from "../../../types";
 import { renderProps } from "../../../helpers";
-import "./style.scss";
 
 export default function Button(props: Tag) {
   return (

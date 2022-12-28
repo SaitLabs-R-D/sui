@@ -8,11 +8,7 @@
     "target": "es6",
     "module": "es6",
     "moduleResolution": "node",
-    "rootDirs": [
-      "src/styles",
-      "src/parts/buttons/style.scss",
-      "src/parts/inputs/style.scss"
-    ]
+    "rootDirs": ["src/styles"]
   },
   "include": ["src"]
 }

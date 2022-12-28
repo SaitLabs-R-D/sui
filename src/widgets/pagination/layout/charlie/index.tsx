@@ -1,3 +1,4 @@
+import React from "react";
 import { getPaginationItems } from "../../scripts";
 import { PaginationLayoutProps } from "../../../../types";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";

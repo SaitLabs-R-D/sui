@@ -1,3 +1,4 @@
+import React from "react";
 import { HiArrowSmDown } from "react-icons/hi";
 import { SorterProps } from "../../../../../types";
 
