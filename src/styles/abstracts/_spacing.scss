@@ -1,0 +1,129 @@
+@use "./bp" as *;
+
+@mixin create-spaces() {
+  @include actual_creation_auto($size: "");
+
+  @include mobile() {
+    @include actual_creation_auto($size: "sm-");
+  }
+  @include tablet {
+    @include actual_creation_auto($size: "md-");
+  }
+  @include desktop {
+    @include actual_creation_auto($size: "lg-");
+  }
+
+  @for $i from 1 through 10 {
+    @include actual_creation($size: "", $i: $i);
+
+    // todo : include mobile and tablet
+    @include mobile {
+      @include actual_creation($size: "sm-", $i: $i);
+    }
+
+    @include tablet {
+      @include actual_creation($size: "md-", $i: $i);
+    }
+
+    @include desktop {
+      @include actual_creation($size: "lg-", $i: $i);
+    }
+  }
+}
+
+// private
+@mixin actual_creation($size: "", $i) {
+  $space: #{(0.25 * $i)}rem;
+
+  .m-#{$size}#{$i} {
+    margin: $space;
+  }
+  .mt-#{$size}#{$i} {
+    margin-top: $space;
+  }
+  .mr-#{$size}#{$i} {
+    margin-right: $space;
+  }
+  .mb-#{$size}#{$i} {
+    margin-bottom: $space;
+  }
+  .ml-#{$size}#{$i} {
+    margin-left: $space;
+  }
+  .mx-#{$size}#{$i} {
+    margin-inline: $space;
+  }
+  .my-#{$size}#{$i} {
+    margin-block: $space;
+  }
+
+  .p-#{$size}#{$i} {
+    padding: $space;
+  }
+  .pt-#{$size}#{$i} {
+    padding-top: $space;
+  }
+  .pr-#{$size}#{$i} {
+    padding-right: $space;
+  }
+  .pb-#{$size}#{$i} {
+    padding-bottom: $space;
+  }
+  .pl-#{$size}#{$i} {
+    padding-left: $space;
+  }
+  .px-#{$size}#{$i} {
+    padding-left: $space;
+    padding-right: $space;
+  }
+  .py-#{$size}#{$i} {
+    padding-top: $space;
+    padding-bottom: $space;
+  }
+}
+
+@mixin actual_creation_auto($size: "") {
+  .m-#{$size}auto {
+    margin: auto;
+  }
+  .mt-#{$size}auto {
+    margin-top: auto;
+  }
+  .mr-#{$size}auto {
+    margin-right: auto;
+  }
+  .mb-#{$size}auto {
+    margin-bottom: auto;
+  }
+  .ml-#{$size}auto {
+    margin-left: auto;
+  }
+  .mx-#{$size}auto {
+    margin-inline: auto;
+  }
+  .my-#{$size}auto {
+    margin-block: auto;
+  }
+
+  .p-#{$size}auto {
+    padding: auto;
+  }
+  .pt-#{$size}auto {
+    padding-top: auto;
+  }
+  .pr-#{$size}auto {
+    padding-right: auto;
+  }
+  .pb-#{$size}auto {
+    padding-bottom: auto;
+  }
+  .pl-#{$size}auto {
+    padding-left: auto;
+  }
+  .px-#{$size}auto {
+    padding-inline: auto;
+  }
+  .py-#{$size}auto {
+    padding-block: auto;
+  }
+}

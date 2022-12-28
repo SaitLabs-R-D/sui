@@ -1,0 +1,19 @@
+{
+  "name": "saitlabs-sui",
+  "version": "1.1.2",
+  "description": "",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc && cp package.json README.md ./dist"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
+    "react-router-dom": "^6.4.3",
+    "saitlabs-sui": "^1.1.0"
+  },
+  "keywords": [],
+  "author": "Yishay & Shir saitlabs frontend team",
+  "license": "ISC"
+}

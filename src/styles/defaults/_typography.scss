@@ -1,0 +1,29 @@
+* {
+  @extend .sui-font;
+}
+
+.sui-font {
+  font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+  font-size: $fs-xl;
+}
+h2 {
+  font-size: $fs-l;
+}
+h3 {
+  font-size: $fs-ml;
+}
+
+span,
+p,
+a,
+li,
+ul,
+ol,
+button,
+input,
+textarea {
+  font-size: $fs-s;
+}

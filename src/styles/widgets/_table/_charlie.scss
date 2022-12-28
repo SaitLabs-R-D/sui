@@ -1,0 +1,82 @@
+$main-card-radius: 25px;
+$main-card-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+$column-radius: 30px;
+
+$border-color: yellow;
+$border-width: 2px;
+
+$selected-row-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+.sui-layout.--charlie {
+  padding-inline: $column-radius;
+  padding-bottom: 20px;
+  box-shadow: $main-card-shadow;
+  border-radius: $main-card-radius;
+
+  .sui-table {
+    --border-color: #ebebeb;
+    --border-width: $border-width;
+    @extend .--border-parts !optional;
+
+    border-spacing: 0 10px;
+
+    th {
+      font-weight: 500;
+      font-size: $fs-s;
+    }
+
+    th,
+    td {
+      &:not(.--active) {
+        &,
+        & *:not(:focus) {
+          color: $secondary;
+        }
+      }
+    }
+    tr {
+      position: relative;
+      border-radius: 25px;
+    }
+    tr:nth-child(2) td todo {
+      border-width: 2px;
+      border-color: rgba(0, 0, 0, 0.1);
+
+      border-style: none;
+      border-top-style: solid;
+      border-bottom-style: solid;
+
+      &:first-child {
+        border-start-start-radius: $column-radius;
+        border-end-start-radius: $column-radius;
+
+        border-inline-start-style: solid;
+      }
+
+      &:last-child {
+        border-start-end-radius: $column-radius;
+        border-end-end-radius: $column-radius;
+
+        border-inline-end-style: solid;
+      }
+    }
+
+    td {
+      padding: 15px 20px;
+    }
+
+    th > div {
+      padding: 10px 20px;
+    }
+
+    th.cell__wrraper.--sortable {
+      cursor: pointer;
+
+      // the wrraper of sorters & text
+      & > div {
+        @include flex($justify: flex-start);
+      }
+    }
+  }
+}
