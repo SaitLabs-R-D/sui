@@ -23,7 +23,7 @@ export default function RenderHeadCell({
       } ${sticky && "--sticky"}`}
       onClick={handleClick}
     >
-      <div>{children}</div>
+      {children}
     </Th>
   );
 }

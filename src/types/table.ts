@@ -39,7 +39,7 @@ export type ColumnTypes =
   | "button"
   | "checkbox"
   | "icon"
-  | "status";
+  | "datalist";
 
 export interface Row {
   // todo: make each key the typeof columns[i].key

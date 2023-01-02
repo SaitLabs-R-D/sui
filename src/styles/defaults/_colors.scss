@@ -1,8 +1,8 @@
 html {
-  @extend .sui-color-dark;
-  @extend .sui-bg-light;
+  @extend .sui-color-dark !optional;
+  @extend .sui-bg-light !optional;
 }
 
 a {
-  @extend .sui-color-primary;
+  @extend .sui-color-primary !optional;
 }

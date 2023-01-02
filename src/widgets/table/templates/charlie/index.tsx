@@ -27,6 +27,48 @@ export default function TableCharlie({
   });
 
   return (
+    <Table className="--border">
+      <Thead>
+        <Tr>
+          {table.columns.map((column, i) => (
+            <RenderHeadCell
+              key={i}
+              sticky={config.sticky === column.key}
+              className={config.sortable ? "--sortable" : ""}
+              sortable={config.sortable?.includes(column.key)}
+              onSort={() => table.setSort(column.key)}
+            >
+              {column.label}
+              {config.sortable && (
+                <CharlieSorter
+                  isActive={table.sort.slice(1) === column.key}
+                  direction={table.sort[0] === "-" ? "backward" : "forward"}
+                />
+              )}
+            </RenderHeadCell>
+          ))}
+        </Tr>
+      </Thead>
+      <Tbody>
+        {table.rows.map((row, i) => (
+          <Tr key={i}>
+            {table.columns.map((item, colIndex) => (
+              <RenderCell
+                sticky={config.sticky === item.key}
+                key={colIndex}
+                row={row}
+                column={table.columns[colIndex]}
+                events={{
+                  ...table.write(table.columns[colIndex].actions, row),
+                }}
+              />
+            ))}
+          </Tr>
+        ))}
+      </Tbody>
+    </Table>
+  );
+  return (
     <TableLayout className="--charlie">
       {/* ! temporary ! */}
       <div className="d-flex justify-content-space-between mt-10 flex-wrap">
@@ -43,10 +85,10 @@ export default function TableCharlie({
           />
         </div>
         <div className="d-flex gap-10">
-          {config.cta && <Button>{config.cta.label}</Button>}
+          {config.cta && <Button>{config.cta?.label}</Button>}
         </div>
       </div>
-      <div>{config.export && <Button>{config.export.label}</Button>}</div>
+      <div>{config.export && <Button>{config.export?.label}</Button>}</div>
       {/* ! end temporary ! */}
       <Table className="--border-parts">
         <Thead>
