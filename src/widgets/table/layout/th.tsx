@@ -5,10 +5,11 @@ import { renderProps } from "../../../helpers";
 export default function Th(props: Tag) {
   return (
     <th
+      scope="col"
       {...renderProps(props, ["className"])}
       className={`sui-table__cell sui-table__cell--th ${props.className ?? ""}`}
     >
-      {props.children}
+      <div>{props.children}</div>
     </th>
   );
 }

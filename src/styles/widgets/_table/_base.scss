@@ -1,11 +1,7 @@
 /*
 .sui-layout
   .sui-table__filters
-  ...sui-table__wrraper
-  .sui-table__footer
-*/
-/*
-.sui-table__wrraper
+  .sui-table__wrraper
     .sui-table
       .sui-table__head
         .sui-table__row
@@ -13,37 +9,40 @@
       .sui-table__body
         .sui-table__row
           .sui-table__cell--td
+  .sui-table__footer
+    .sui-table__row
+            .sui-table__cell--td
 */
 
-.sui-layout {
-  width: 100%;
-}
-
 .sui-table__wrraper {
-  width: 100%;
   overflow-x: auto;
 }
 
 .sui-table {
-  width: 100%;
-}
-
-.sui-table {
   --bg: white;
+  // todo : css vars
+  $hover-bg: darken(
+    $color: white,
+    $amount: 10%,
+  );
+  --color: $dark;
+
   isolation: isolate;
   background: var(--bg);
 
+  &.--prisoner {
+    .sui-table__row:nth-child(odd) .sui-table__cell--td {
+      background: $hover-bg;
+    }
+  }
+
   &__cell {
     background: var(--bg);
+    color: var(--color);
 
     border-color: var(--border-color, gray);
     border-style: hidden;
     border-width: var(--border-width, 1px);
-
-    white-space: nowrap;
-    & > * {
-      display: inline-block;
-    }
 
     &.--sticky {
       position: sticky;
@@ -53,6 +52,15 @@
 
     &--th {
       text-align: start;
+      cursor: pointer;
+    }
+
+    & > div {
+      display: flex;
+      align-items: center;
+      margin: 2.5px 5px;
+
+      white-space: nowrap;
     }
   }
 

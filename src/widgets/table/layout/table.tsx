@@ -4,9 +4,11 @@ import { renderProps } from "../../../helpers";
 
 export default function Table(props: Tag) {
   return (
-    <div className="sui-table__wrraper">
+    <div
+      className={"sui-table__wrraper"}
+      {...renderProps(props, ["className", "cellSpacing", "cellPadding"])}
+    >
       <table
-        {...renderProps(props, ["className", "cellSpacing", "cellPadding"])}
         cellPadding={props.cellPadding ?? 0}
         cellSpacing={props.cellSpacing ?? 0}
         className={`sui-table ${props.className ?? ""}`}
