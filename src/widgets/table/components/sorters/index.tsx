@@ -1,8 +1,8 @@
 import React from "react";
 import { HiArrowSmDown } from "react-icons/hi";
-import { SorterProps } from "../../../../../types";
+import { SorterProps } from "../../../../types";
 
-export default function CharlieSorter({
+export default function Sorter({
   isActive = false,
   direction = "forward",
   ...rest
@@ -10,7 +10,7 @@ export default function CharlieSorter({
   return (
     <div
       {...rest}
-      className={`${rest.className || ""} sui-sorter --charlie ${
+      className={`${rest.className || ""} sui-sorter  ${
         isActive ? "--active" : ""
       } --${direction}`}
     >

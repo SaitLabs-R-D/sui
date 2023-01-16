@@ -1,1 +1,17 @@
-@import "charlie";
+.sui-sorter {
+  &:not(.--active) {
+    opacity: 0;
+  }
+
+  &.--backward {
+    transform: rotateX(180deg);
+  }
+
+  svg {
+    font-size: 20px;
+    color: $secondary;
+  }
+
+  @include flex;
+  transition: 0.25s;
+}

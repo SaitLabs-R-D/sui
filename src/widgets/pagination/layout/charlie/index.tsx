@@ -11,7 +11,7 @@ export default function Pagination({
   const pagi = getPaginationItems(count, page);
 
   return (
-    <div className="sui-pagination --charlie">
+    <div className="sui-pagination ">
       <button onClick={() => setPage(page - 1)} disabled={!pagi.prev}>
         <IoIosArrowBack />
       </button>

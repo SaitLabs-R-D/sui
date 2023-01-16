@@ -1,6 +1,6 @@
 import React from "react";
-import { LinkProps } from "../../../types";
-import { renderProps } from "../../../helpers";
+import { LinkProps } from "../../types";
+import { renderProps } from "../../helpers";
 import { Link } from "react-router-dom";
 
 export default function A(props: LinkProps) {

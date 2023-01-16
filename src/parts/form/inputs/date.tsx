@@ -4,7 +4,7 @@ import { renderProps } from "../../../helpers";
 
 export default function InputDate(props: Tag) {
   return (
-    <div className="sui-input-container --charlie">
+    <div className="sui-input-container">
       <input className="sui-input --date" {...renderProps(props)}>
         {props.children}
       </input>

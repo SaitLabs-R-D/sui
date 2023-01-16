@@ -4,7 +4,7 @@ import { renderProps } from "../../../helpers";
 
 export default function InputText(props: Tag) {
   return (
-    <div className={`${props.className} sui-input-container --charlie`}>
+    <div className={`${props.className} sui-input-container `}>
       <input {...renderProps(props)} className="sui-input --text" />
       <span>{props?.title}</span>
     </div>

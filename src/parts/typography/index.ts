@@ -1,2 +1,13 @@
 import React from "react";
-export * from "./tags";
+export { default as A } from "./a";
+export { default as B } from "./b";
+export { default as Strong } from "./strong";
+export { default as H1 } from "./h1";
+export { default as H2 } from "./h2";
+export { default as H3 } from "./h3";
+export { default as I } from "./i";
+export { default as Label } from "./label";
+export { default as P } from "./p";
+export { default as Span } from "./span";
+export { default as Ul } from "./ul";
+export { default as Li } from "./li";

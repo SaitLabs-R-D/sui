@@ -6,9 +6,7 @@ export default function Button(props: Tag) {
   return (
     <button
       {...renderProps(props)}
-      className={`sui-btn --charlie ${props.size || ""} ${
-        props.className || ""
-      }`}
+      className={`sui-btn ${props.size || ""} ${props.className || ""}`}
     >
       {props.children}
     </button>
