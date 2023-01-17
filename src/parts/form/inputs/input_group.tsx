@@ -13,7 +13,7 @@ export default function InputGroup({
     <div {...rest} className={`sui-input-group ${className || ""}`}>
       {label && <label htmlFor={id}>{label}</label>}
       {children}
-      {title && <span>{title}</span>}
+      {title && <span className={`title`}>{title}</span>}
     </div>
   );
 }

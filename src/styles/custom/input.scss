@@ -1,19 +1,27 @@
+@use "../abstracts/flex" as *;
+@use "../abstracts/typography" as *;
+
 .sui-input {
   outline: unset;
   border: unset;
-  padding: 0.625rem 1.125rem;
+  padding: 0.625rem 0.6rem;
   border: 1px solid #ebebeb;
   border-radius: 0.5rem;
+  width: 100%;
 
   transition: box-shadow 0.25s;
 
   &:focus {
-    box-shadow: 0 0 0 0.2rem rgb(13 110 253 / 25%);
-    border-color: #86b7fe;
+    // box-shadow: 0 0 0 0.1rem rgb(13 110 253 / 25%);
+    border-color: #000000;
   }
 
   &.--date {
     max-width: 100%;
+  }
+
+  &[data-error="true"] {
+    border-color: #ea001f;
   }
 
   &.--select {
@@ -31,5 +39,21 @@
     height: 200px;
     resize: none;
     text-indent: 0;
+  }
+}
+
+.sui-input-group {
+  width: 100%;
+  @include flex($dir: column, $align: flex-start);
+
+  .title {
+    color: #ea001f;
+    font-size: $fs-xs;
+  }
+
+  &:has(:required) label::after {
+    content: "*";
+    margin-inline: 5px;
+    color: #ea001f;
   }
 }
