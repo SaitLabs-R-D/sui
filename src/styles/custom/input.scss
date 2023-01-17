@@ -1,26 +1,18 @@
-.sui-input-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-.sui-input-container {
-  resize: none;
-  text-indent: 0;
-  padding: 0 22px 0 18px;
-  border-radius: 25px;
-  border: 2px solid #ebebeb;
-}
-
 .sui-input {
-  outline: none;
-  border: none;
-  padding: 10px;
+  outline: unset;
+  border: unset;
+  padding: 0.625rem 1.125rem;
+  border: 1px solid #ebebeb;
+  border-radius: 0.5rem;
 
-  &.--text {
+  transition: box-shadow 0.25s;
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgb(13 110 253 / 25%);
+    border-color: #86b7fe;
   }
 
   &.--date {
-    width: 160px;
     max-width: 100%;
   }
 
@@ -37,26 +29,7 @@
 
   &.--textarea {
     height: 200px;
-    border-radius: 20px;
-
     resize: none;
     text-indent: 0;
-    padding: 15px 10px;
-    border-radius: 20px !important;
-  }
-}
-
-.sui-input-group {
-  position: relative;
-  border: 1px solid #cbcbcb;
-  border-radius: 19px;
-  display: inline-flex;
-  align-items: center;
-
-  //not working for now
-  &.--text {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    margin-left: -1px;
   }
 }

@@ -1,9 +1,19 @@
 import React from "react";
+import { Tag } from "../../../types";
 
-export default function InputGroup(props: any) {
+export default function InputGroup({
+  className,
+  label,
+  title,
+  id,
+  children,
+  ...rest
+}: any) {
   return (
-    <div {...props} className="sui-input-group">
-      {props.children}
+    <div {...rest} className={`sui-input-group ${className || ""}`}>
+      {label && <label htmlFor={id}>{label}</label>}
+      {children}
+      {title && <span>{title}</span>}
     </div>
   );
 }

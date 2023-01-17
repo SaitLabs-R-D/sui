@@ -1,42 +1,23 @@
+@use "../abstracts/typography" as *;
+@use "../abstracts/flex" as *;
+
 .sui-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7.5px;
+  @include flex($gap: 0.75rem);
 
-  font-size: 16px;
-  font-weight: 500;
+  border: unset;
+  outline: unset;
+  border-radius: 0.5rem;
 
-  padding: 0 20px;
-  height: 50px;
-
-  border-radius: 30px;
-  border: none;
-  outline: none;
   cursor: pointer;
 
-  .large {
-    padding: 0 30px;
-    height: 60px;
-    font-size: 20px;
-  }
-  .small {
-    padding: 0 10px;
-    height: 40px;
-    font-size: 12px;
-  }
-  svg {
-    width: 15px;
-    height: 15px;
-  }
+  padding: 0.75rem 1.25rem;
 
-  &.--outlined {
-    background: white;
-    border: 2px solid #aaaaaa;
-    color: #868686;
-
-    svg {
-      fill: #868686;
-    }
+  &.--large {
+    padding: 0.75rem 2rem;
+    font-size: $fs-ms;
+  }
+  &.--small {
+    padding: 0.25rem 0.75rem;
+    font-size: $fs-xxs;
   }
 }
