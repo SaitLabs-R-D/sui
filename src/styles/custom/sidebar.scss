@@ -2,15 +2,15 @@
 @use "../abstracts/flex" as *;
 
 .container {
-  border-radius: 0.5rem;
-
-  background-color: rgba(236, 236, 236, 0.88);
   @include flex($dir: column, $align: stretch, $justify: none);
+
+  box-shadow: 0px 13px 30px #8e86b438;
 
   width: 260px;
   max-width: 50%;
 
-  padding-block: 20px;
+  padding-block: 40px;
+  background-color: #ececece0;
 
   .nav-item {
     cursor: pointer;
@@ -22,11 +22,13 @@
 
     font-size: $fs-ms;
     &:hover {
-      background-color: aqua;
+      background-color: #dfdfdfe0;
     }
   }
 
   .nav-item-active {
+    @extend .nav-item;
     font-weight: bold;
+    background-color: white;
   }
 }

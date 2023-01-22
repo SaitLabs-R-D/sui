@@ -31,9 +31,12 @@ export default function SideBar(props: any) {
       {pages.map((item, index) => (
         <A
           href={item.url}
-          className="nav-item"
+          className={
+            window.location.pathname === item.url
+              ? "nav-item-active"
+              : "nav-item"
+          }
           key={index}
-          onClick={() => (window.location.href = item.url)}
         >
           {item.icon}
           <span>{item.name}</span>
