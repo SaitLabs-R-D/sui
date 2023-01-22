@@ -1,6 +1,6 @@
 import React from "react";
 import Icons from "../../assets/icons";
-import { A } from "../typography";
+import { A } from "../../parts";
 
 export default function SideBar(props: any) {
   const pages = [
@@ -27,7 +27,7 @@ export default function SideBar(props: any) {
   ];
 
   return (
-    <div className="container">
+    <nav className="container">
       {pages.map((item, index) => (
         <A
           href={item.url}
@@ -39,6 +39,6 @@ export default function SideBar(props: any) {
           <span>{item.name}</span>
         </A>
       ))}
-    </div>
+    </nav>
   );
 }
