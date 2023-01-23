@@ -1,4 +1,4 @@
-@import "button";
-@import "input";
-@import "header";
-@import "sidebar";
+@forward "button";
+@forward "input";
+@forward "header";
+@forward "sidebar";
