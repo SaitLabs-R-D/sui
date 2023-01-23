@@ -1,7 +1,8 @@
 @use "../abstracts/typography" as *;
 @use "../abstracts/flex" as *;
+@use "../abstracts/base" as *;
 
-.container {
+.sui-sidebar {
   @include flex($dir: column, $align: stretch, $justify: none);
 
   box-shadow: 0px 13px 30px #8e86b438;
@@ -12,23 +13,23 @@
   padding-block: 40px;
   background-color: #ececece0;
 
-  .nav-item {
-    cursor: pointer;
+  &__nav-item {
+    color: inherit;
+
     padding: 10px 40px;
     @include flex($gap: 10px, $justify: flex-start);
 
-    color: black;
     text-decoration: none;
+    cursor: pointer;
+
+    &[data-active="true"] {
+      font-weight: bold;
+      background-color: white;
+    }
 
     font-size: $fs-ms;
     &:hover {
       background-color: #dfdfdfe0;
     }
-  }
-
-  .nav-item-active {
-    @extend .nav-item;
-    font-weight: bold;
-    background-color: white;
   }
 }

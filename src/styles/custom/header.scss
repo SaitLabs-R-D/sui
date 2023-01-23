@@ -1,0 +1,11 @@
+@use "../abstracts/base" as *;
+
+.sui-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  box-shadow: 0px 13px 30px #8e86b438;
+
+  height: $header-height;
+  padding-inline: 25px;
+}

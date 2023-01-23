@@ -1,47 +1,38 @@
 import React from "react";
 import Icons from "../../assets/icons";
 import { A } from "../../parts";
+import { Tag } from "../../types";
 
-export default function SideBar(props: any) {
-  const pages = [
-    {
-      name: "Users",
-      url: "/users",
-      icon: Icons["settings"],
-    },
-    {
-      name: "Products",
-      url: "/products",
-      icon: Icons["settings"],
-    },
-    {
-      name: "Projects",
-      url: "/projects",
-      icon: Icons["settings"],
-    },
-    {
-      name: "Clients",
-      url: "/clients",
-      icon: Icons["settings"],
-    },
-  ];
+export interface SideBarProps extends Tag {
+  navItems?: navItem[];
+}
 
+export interface navItem extends Tag {
+  name: string;
+  url: string;
+  icon?: React.ReactElement;
+  isActive?: boolean;
+}
+
+export default function SideBar({ navItems, ...rest }: SideBarProps) {
   return (
-    <nav className="container">
-      {pages.map((item, index) => (
-        <A
-          href={item.url}
-          className={
-            window.location.pathname === item.url
-              ? "nav-item-active"
-              : "nav-item"
-          }
-          key={index}
-        >
-          {item.icon}
-          <span>{item.name}</span>
-        </A>
-      ))}
+    <nav className="sui-sidebar" {...rest}>
+      {navItems?.map((item, index) => {
+        const { url, icon, name, isActive, className, ...rest } = item;
+        return (
+          <A
+            href={url}
+            className={`sui-sidebar__nav-item ${className || ""}`}
+            data-active={isActive ?? window.location.href.includes(url)}
+            key={index}
+            {...rest}
+          >
+            {icon && <div className="sui-sidebar__icon">{icon}</div>}
+
+            <span className="sui-sidebar__text">{name}</span>
+          </A>
+        );
+      })}
     </nav>
   );
 }

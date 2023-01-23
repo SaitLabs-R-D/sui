@@ -3,7 +3,7 @@ import "../styles/style.scss";
 import "../styles/custom/button.scss";
 import "../styles/custom/input.scss";
 import "../styles/custom/sidebar.scss";
-import "../styles/custom/navbar.scss";
+import "../styles/custom/header.scss";
 
 const SuiContext = createContext({});
 
