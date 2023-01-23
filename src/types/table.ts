@@ -29,6 +29,7 @@ export type ActionEvents = React.ChangeEvent<HTMLInputElement>;
 export type ActionTypes = "onClick" | "onChange" | "href";
 
 export type ColumnTypes =
+  | "status"
   | "string"
   | "number"
   | "boolean"
