@@ -21,7 +21,7 @@ export default function SideBar({ navItems, ...rest }: SideBarProps) {
         const { url, icon, name, isActive, className, ...rest } = item;
         return (
           <A
-            href={url}
+            to={url}
             className={`sui-sidebar__nav-item ${className || ""}`}
             data-active={isActive ?? window.location.href.includes(url)}
             key={index}
