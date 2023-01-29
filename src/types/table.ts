@@ -7,6 +7,12 @@ export interface TableHook {
   config: TableConfig;
 }
 
+export interface TableProps extends Tag {
+  columns: Column[];
+  getRows: getRowsArgs;
+  config?: TableConfig;
+}
+
 export interface Column {
   key: string;
   label: string;
